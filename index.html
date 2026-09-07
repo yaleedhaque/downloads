@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yaleedhaque — Downloads</title>
+<meta name="description" content="Download apps, software and docs from yaleedhaque. Public downloads and live websites — source code stays private.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+<style>
+  :root {
+    --bg: #080910;
+    --bg-2: #0d1019;
+    --bg-3: #05060b;
+    --card: #12151f;
+    --card-2: #161927;
+    --line: #232838;
+    --text: #e8eaf2;
+    --text-dim: #9aa3b5;
+    --text-faint: #666f82;
+    --aurora: #22d3ee;
+    --violet: #a78bfa;
+    --teal: #34d399;
+    --amber: #fbbf24;
+    --rose: #fb7185;
+    --cta: #22d3ee;
+    --radius: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(167,139,250,.14), transparent 60%),
+                radial-gradient(1000px 500px at 10% 110%, rgba(34,211,238,.10), transparent 55%),
+                var(--bg-3);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  a { color: var(--aurora); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* header */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(8,9,16,.72);
+    backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+  .brand span { color: var(--violet); }
+  .nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--text-dim); }
+  .nav-links a { color: var(--text-dim); }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+  .hero { text-align: center; margin-bottom: 56px; }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -.02em;
+    background: linear-gradient(100deg, var(--text) 30%, var(--aurora) 55%, var(--violet) 80%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p { color: var(--text-dim); max-width: 640px; margin: 14px auto 0; font-size: 16px; }
+  .hero .note {
+    display: inline-block; margin-top: 20px; padding: 6px 14px;
+    border: 1px solid var(--line); border-radius: 999px;
+    font-size: 13px; color: var(--text-faint); background: var(--bg-2);
+  }
+
+  /* filter tabs */
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px; }
+  .tab {
+    padding: 7px 16px; border-radius: 999px; font-size: 13px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--bg-2); color: var(--text-dim);
+    transition: all .15s ease; user-select: none;
+  }
+  .tab:hover { color: var(--text); border-color: #33415a; }
+  .tab.active { background: var(--cta); border-color: var(--cta); color: #051014; font-weight: 600; }
+
+  /* project cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  .card {
+    background: linear-gradient(180deg, var(--card), var(--card-2));
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; display: flex; flex-direction: column; gap: 12px;
+    transition: transform .15s ease, border-color .15s ease, opacity .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: #33415a; }
+  .card.hidden { display: none; }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .card h3 { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+  .badge {
+    flex-shrink: 0; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    padding: 3px 9px; border-radius: 999px; text-transform: uppercase;
+    border: 1px solid currentColor;
+  }
+  .b-website { color: var(--teal); }
+  .b-app     { color: var(--aurora); }
+  .b-tool    { color: var(--violet); }
+  .b-doc     { color: var(--amber); }
+  .b-game    { color: var(--rose); }
+  .card p { color: var(--text-dim); font-size: 14px; }
+  .actions { display: flex; gap: 10px; margin-top: auto; padding-top: 4px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 16px; border-radius: 10px; font-size: 13.5px; font-weight: 600;
+    transition: all .15s ease; text-decoration: none; border: none;
+  }
+  .btn-primary { background: var(--cta); color: #051014; }
+  .btn-primary:hover { background: #38e1f7; text-decoration: none; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: #33415a; text-decoration: none; color: var(--text); }
+  .btn-sm { padding: 6px 12px; font-size: 12.5px; }
+
+  .foot-note {
+    margin-top: 48px; padding: 18px 22px; border: 1px dashed var(--line);
+    border-radius: var(--radius); color: var(--text-faint); font-size: 13.5px; line-height: 1.7;
+  }
+  .foot-note code { background: var(--bg-2); padding: 1px 6px; border-radius: 6px; color: var(--aurora); font-size: 12.5px; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 24px;
+    text-align: center; color: var(--text-faint); font-size: 13px;
+  }
+  footer a { color: var(--text-dim); }
+
+  @media (max-width: 640px) {
+    main { padding-top: 36px; }
+    .nav-links { gap: 14px; font-size: 13px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">yaleedhaque<span>/</span>downloads</div>
+    <div class="nav-links">
+      <a href="https://yaleedhaque.github.io">Back to portfolio</a>
+      <a href="#note">How it works</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Apps, software &amp; websites — free</h1>
+    <p>Download the finished products and visit the live websites. All source code, configuration and internals remain private — only the things you can actually <em>use</em> are published here.</p>
+    <div class="note">⚡ Free to download · Free to use · No account needed</div>
+  </section>
+
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-filter="all">All</div>
+    <div class="tab" data-filter="website">Websites</div>
+    <div class="tab" data-filter="app">Apps</div>
+    <div class="tab" data-filter="game">Games</div>
+    <div class="tab" data-filter="tool">Tools</div>
+  </div>
+
+  <section class="grid" id="grid">
+
+    <!-- ============ WEBSITES ============ -->
+
+    <article class="card" data-cat="website">
+      <div class="card-top">
+        <h3>Family Tapestry</h3>
+        <span class="badge b-website">Website</span>
+      </div>
+      <p>A collaborative family tree — a living tapestry of the people you love. Photos, timelines, maps, real-time presence.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://family-tapestry-nine.vercel.app" target="_blank" rel="noopener">Visit website →</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="website">
+      <div class="card-top">
+        <h3>bKash E-Commerce Template</h3>
+        <span class="badge b-website">Website</span>
+      </div>
+      <p>A modern shop template for Bangladeshi local businesses — bKash + WhatsApp ordering, admin dashboard, product photos.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://bkash-ecommerce.vercel.app" target="_blank" rel="noopener">Visit website →</a>
+      </div>
+    </article>
+
+    <!-- ============ APPS ============ -->
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>YaleDoc</h3>
+        <span class="badge b-app">App</span>
+      </div>
+      <p>Self-encrypting documents in a single HTML file. A word-like editor that opens offline in any browser — no install, no cloud. Your file never leaves your device.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/YaleDoc-Demo.ydoc.html" download>Download demo</a>
+        <a class="btn btn-ghost" href="https://github.com/yaleedhaque/yale-doc-yaleed" target="_blank" rel="noopener">Learn more</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>GamePad (Android)</h3>
+        <span class="badge b-app">Android app</span>
+      </div>
+      <p>Turn your phone into a wireless game controller for your PC. Offline multiplayer, no cloud, sub-5 ms latency.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">APK — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>Lumen (Android)</h3>
+        <span class="badge b-app">Android app</span>
+      </div>
+      <p>A lightweight modern flashlight: LED torch, screen light, strobe, SOS, Morse send &amp; decode, timer, tile &amp; widget.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">APK — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>OmniFetch (Android)</h3>
+        <span class="badge b-app">Android app</span>
+      </div>
+      <p>Search, stream and download YouTube videos on-device with bundled yt-dlp + ffmpeg.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">APK — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>Aether Compass (Android)</h3>
+        <span class="badge b-app">Android app</span>
+      </div>
+      <p>Lightweight, modern offline compass — Kotlin + Jetpack Compose.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">APK — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>Bluetooth Remote HID (Android)</h3>
+        <span class="badge b-app">Android app</span>
+      </div>
+      <p>Turn your phone into a wireless keyboard, touchpad, air-mouse and media remote for any PC over Bluetooth. No host software.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">APK — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="app">
+      <div class="card-top">
+        <h3>StarkAgent (Windows)</h3>
+        <span class="badge b-app">Windows</span>
+      </div>
+      <p>A fully autonomous desktop agent — 295+ commands, OCR, vision, MCP, browser control. Single ~25 MB .exe.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">.exe — coming soon</a>
+      </div>
+    </article>
+
+    <!-- ============ GAMES ============ -->
+
+    <article class="card" data-cat="game">
+      <div class="card-top">
+        <h3>Haque Squad</h3>
+        <span class="badge b-game">Game</span>
+      </div>
+      <p>Local multiplayer arena shooter (Mini-Militia style). 13 weapons, 5 maps, FFA / TDM / COOP, bots. Phones join over WiFi as controllers — no install, open a page in your browser.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">Windows build — coming soon</a>
+        <a class="btn btn-ghost" href="https://github.com/yaleedhaque/haque-squad" target="_blank" rel="noopener">Project page</a>
+      </div>
+    </article>
+
+    <!-- ============ TOOLS ============ -->
+
+    <article class="card" data-cat="tool">
+      <div class="card-top">
+        <h3>YaleAgent</h3>
+        <span class="badge b-tool">Tool</span>
+      </div>
+      <p>Linux desktop automation agent — 68 tools across 11 categories with vision click-by-text, browser control, media, clipboard. Runs as CLI, MCP server or web dashboard.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">Install — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tool">
+      <div class="card-top">
+        <h3>Stark Hotspot</h3>
+        <span class="badge b-tool">Tool</span>
+      </div>
+      <p>Run a WiFi hotspot while staying connected to your WiFi — concurrent STA + AP on one radio. Tiny, config-driven, tray toggle.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">Script pack — coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tool">
+      <div class="card-top">
+        <h3>Edge — Speech to Text</h3>
+        <span class="badge b-tool">Tool</span>
+      </div>
+      <p>Self-hosted, on-device AI audio transcription. Upload any audio/video, get word-timed transcripts. No cloud, no API keys.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">Coming soon</a>
+      </div>
+    </article>
+
+    <article class="card" data-cat="tool">
+      <div class="card-top">
+        <h3>Ai-Browser-Toolkit</h3>
+        <span class="badge b-tool">Tool</span>
+      </div>
+      <p>Drive a real Chrome or Edge browser from a JSON API — one server, one persistent profile, full DOM control.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="files/coming-soon.txt">Coming soon</a>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="foot-note" id="note">
+    <strong>How this works &amp; why the source is private</strong><br><br>
+    The finished products you can see and use — the websites, the apps, the downloads — are published here for everyone, free.<br>
+    The <em>source code, configuration, extensions and internals</em> behind them live in private repositories and are not distributed.
+    This page only ever hosts <strong>built outputs</strong> (APKs, executables, scripts, standalone files).
+    Want something added or changed? <a href="https://github.com/yaleedhaque/yaleedhaque.github.io/issues" target="_blank" rel="noopener">Open an issue</a>.
+  </section>
+</main>
+
+<footer>
+  <p>Built &amp; maintained by <a href="https://github.com/yaleedhaque">@yaleedhaque</a> · <a href="https://yaleedhaque.github.io">yaleedhaque.github.io</a></p>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const cards = document.querySelectorAll('.card');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      cards.forEach(c => c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f));
+    });
+  });
+</script>
+</body>
+</html>

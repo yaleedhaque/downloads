@@ -1,0 +1,4 @@
+This file is a placeholder shown while a real download is being prepared.
+
+It exists so the "Download" buttons on the hub work (no 404s) until the actual
+app/executable gets published here. Check back soon.
