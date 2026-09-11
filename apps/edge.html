@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge — Speech to Text — yaleedhaque Downloads</title>
+<meta name="description" content="Self-hosted, on-device AI transcription.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+<style>
+:root{
+  --bg:#080910; --bg-2:#0d1019; --bg-3:#05060b; --card:#12151f; --card-2:#161927;
+  --line:#232838; --text:#e8eaf2; --text-dim:#9aa3b5; --text-faint:#666f82;
+  --aurora:#22d3ee; --violet:#a78bfa; --teal:#34d399; --amber:#fbbf24;
+  --rose:#fb7185; --cta:#22d3ee; --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:radial-gradient(1200px 600px at 80% -10%,rgba(167,139,250,.14),transparent 60%),
+             radial-gradient(1000px 500px at 10% 110%,rgba(34,211,238,.10),transparent 55%),var(--bg-3);
+  color:var(--text); line-height:1.6; min-height:100vh;
+}
+a{color:var(--aurora);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(8,9,16,.72);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav{max-width:900px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:700;font-size:15px;letter-spacing:.02em}
+.brand span{color:var(--violet)}
+.nav-links{display:flex;gap:22px;font-size:14px;color:var(--text-dim)}
+.nav-links a{color:var(--text-dim)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+main{max-width:900px;margin:0 auto;padding:56px 24px 64px}
+.badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;padding:3px 10px;border-radius:999px;text-transform:uppercase;border:1px solid currentColor}
+.b-app{color:var(--aurora)} .b-website{color:var(--teal)} .b-game{color:var(--rose)} .b-tool{color:var(--violet)}
+h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.02em;margin:14px 0 6px;line-height:1.15}
+.tagline{color:var(--text-dim);font-size:17px;max-width:640px;margin-bottom:8px}
+.meta{font-size:13px;color:var(--text-faint);margin-top:10px}
+h2{font-size:20px;font-weight:700;letter-spacing:-.01em;margin:38px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.card{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:14px}
+.card p{color:var(--text-dim);font-size:14.5px}
+ul.features{list-style:none;display:grid;gap:10px}
+ul.features li{padding-left:26px;position:relative;color:var(--text-dim);font-size:14.5px}
+ul.features li::before{content:"✦";position:absolute;left:0;color:var(--aurora)}
+ol.steps{display:grid;gap:12px;padding-left:0;list-style:none;counter-reset:step;margin:0}
+ol.steps li{position:relative;padding-left:44px;color:var(--text-dim);font-size:14.5px;counter-increment:step;min-height:28px}
+ol.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--cta);color:#051014;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+ol.steps li code{background:var(--bg-2);border:1px solid var(--line);padding:1px 6px;border-radius:6px;color:var(--aurora);font-size:12.5px}
+.dl{display:grid;gap:12px}
+.dl-item{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.dl-info{min-width:0}
+.dl-name{font-weight:700;font-size:15px}
+.dl-desc{color:var(--text-faint);font-size:13px;margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:10px;font-size:13.5px;font-weight:600;transition:all .15s ease;text-decoration:none;border:none;white-space:nowrap}
+.btn-primary{background:var(--cta);color:#051014}
+.btn-primary:hover{background:#38e1f7;text-decoration:none;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:#33415a;text-decoration:none;color:var(--text)}
+.btn-disabled{background:transparent;color:var(--text-faint);border:1px dashed var(--line);cursor:not-allowed}
+.note{margin-top:22px;padding:14px 18px;border:1px dashed var(--line);border-radius:var(--radius);color:var(--text-faint);font-size:13.5px}
+footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--text-faint);font-size:13px}
+footer a{color:var(--text-dim)}
+@media (max-width:640px){main{padding-top:36px} .nav-links{gap:14px;font-size:13px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">yaleedhaque<span>/</span>downloads</div>
+    <div class="nav-links">
+      <a href="../index.html">All downloads</a>
+      <a href="https://yaleedhaque.github.io">Portfolio</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <span class="badge b-tool">Tool</span>
+  <h1>Edge — Speech to Text</h1>
+  <p class="tagline">Self-hosted, on-device AI transcription.</p>
+  <div class="meta">Platforms: Windows / Linux / macOS (self-hosted)</div>
+
+  <h2>What it is</h2>
+  <div class="card"><p>Edge is a self-hosted speech-to-text tool. Upload any audio or video and get word-timed transcripts with clickable words, plus txt / srt / vtt exports. Everything runs on your own machine — no cloud, no API keys.</p></div>
+
+  <h2>Features</h2>
+  <div class="card"><ul class="features">
+    <li>Word-timed transcripts with clickable words</li>
+    <li>TXT / SRT / VTT export</li>
+    <li>On-device model — no cloud, no API keys</li>
+    <li>Cross-platform</li>
+  </ul></div>
+
+  <h2>How to use</h2>
+  <div class="card"><ol class="steps">
+    <li>A packaged build is coming soon — watch this page.</li>
+    <li>When it ships: install, launch the local app, and upload an audio or video file.</li>
+    <li>Copy your transcript or export it as txt / srt / vtt.</li>
+  </ol></div>
+
+  <h2>Download</h2>
+  <div class="dl">
+    <div class="dl-item">
+      <div class="dl-info">
+        <div class="dl-name">Edge — Speech to Text</div>
+        <div class="dl-desc">Packaged build is coming soon.</div>
+      </div>
+      <span class="btn btn-disabled">Download — coming soon</span>
+    </div>
+
+  </div>
+
+  <div class="note">All downloads are free. Apps run fully offline — no account, no cloud, nothing leaves your device.
+  Source repositories are private and are not distributed; only the built products are published here.</div>
+</main>
+
+<footer>
+  <p>Developed by <a href="https://github.com/yaleedhaque">Md. Yaleed Haque</a> · <a href="https://yaleedhaque.github.io/downloads">yaleedhaque.github.io/downloads</a></p>
+</footer>
+
+</body>
+</html>
