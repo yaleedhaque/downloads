@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ঘুরে রাঙাও — আমার ম্যাপ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<header class="appbar">
+  <div class="appbar-in">
+    <a class="brand" href="home.html"><span class="glyph">ঘু</span><b>ঘুরে রাঙাও</b></a>
+    <nav class="nav">
+      <a href="home.html" class="active">আমার ম্যাপ</a>
+      <a href="world.html">বিশ্ব ম্যাপ</a>
+      <a href="explore.html">কোথায় ঘুরবেন</a>
+      <a href="plan.html">ট্রিপ প্ল্যানার</a>
+      <a href="places.html">লুকানো রত্ন</a>
+      <a href="passport.html">পাসপোর্ট</a>
+    </nav>
+    <div class="bar-right">
+      <button class="chip-lang" type="button">English</button>
+      <a class="avatar" href="me.html" aria-label="প্রোফাইল">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Editorial hero with real photo -->
+  <div class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/View_of_Nilachal_hill_after_rain%2C_Bandarban_%282%29.jpg/1280px-View_of_Nilachal_hill_after_rain%2C_Bandarban_%282%29.jpg" alt="বান্দরবানের নীলাচল পাহাড় বৃষ্টির পর" loading="eager" />
+    <div class="hero-grad"></div>
+    <div class="hero-txt">
+      <span class="hero-kicker">আমার ম্যাপ · বাংলাদেশ</span>
+      <h1>যেখানে পা রেখেছো,<br/>সেখানে রঙ পড়ুক</h1>
+      <p>৬৪ জেলার মধ্যে ২৩টিতে তুমি পৌঁছেছো। বাকি জেলাগুলো এখনো অক্ষত — পরের যাত্রায় সেগুলোও রাঙিয়ে ফেলো।</p>
+    </div>
+    <span class="hero-cred">ছবি: নীলাচল, বান্দরবান · Wikimedia Commons</span>
+  </div>
+
+  <!-- Asymmetric stat band -->
+  <section class="statband">
+    <div>
+      <div class="stat-lbl">অগ্রগতি</div>
+      <div class="stat-num">২৩<small> / ৬৪</small></div>
+    </div>
+    <div class="stat-body">
+      <p>তুমি বাংলাদেশের <b>৩৬%</b> জেলা ঘুরে ফেলেছো। সিলেট ও চট্টগ্রাম বিভাগ প্রায় শেষ; রংপুর ও বরিশাল এখনো অপেক্ষায়।</p>
+      <div class="pbar"><span></span></div>
+      <div class="pmeta"><span>৬৪ জেলার মধ্যে</span><span>৩৬% সম্পূর্ণ</span></div>
+      <div style="margin-top:22px"><a class="btn btn-primary" href="explore.html">ম্যাপে রাঙিয়ে নিন →</a></div>
+    </div>
+  </section>
+
+  <!-- Filmstrip with real photos (asymmetric widths) -->
+  <section class="sec">
+    <div class="sec-head">
+      <div><span class="idx">শেষ যাত্রা</span><h2>যেখানে গিয়েছো</h2></div>
+      <a href="explore.html">সব জেলা →</a>
+    </div>
+    <div class="strip">
+      <a class="film" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Sylhet_Bangladesh_Tea_Garden_2022.jpg/960px-Sylhet_Bangladesh_Tea_Garden_Tea_Garden_2022.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Sylhet_Bangladesh_Tea_Garden_2022.jpg/960px-Sylhet_Bangladesh_Tea_Garden_2022.jpg'" alt="সিলেটের চা বাগান" loading="lazy" />
+        <span class="film-badge">লুকানো রত্ন</span>
+        <div class="film-cap"><h4>সিলেট</h4><span>চা বাগান · মালনিচড়া</span></div>
+      </a>
+      <a class="film" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bandarban_Bangladesh.jpg/960px-Bandarban_Bangladesh.jpg" alt="বান্দরবার পাহাড়" loading="lazy" />
+        <div class="film-cap"><h4>বান্দরবান</h4><span>পাহাড় · চট্টগ্রাম হিল ট্র্যাক্টস</span></div>
+      </a>
+      <a class="film" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Malnichora_Tea_Garden_at_Sylhet_02.jpg/960px-Malnichora_Tea_Garden_at_Sylhet_02.jpg" alt="মালনিচড়া চা বাগান" loading="lazy" />
+        <div class="film-cap"><h4>মৌলভীবাজার</h4><span>চা বাগান</span></div>
+      </a>
+      <a class="film" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tea_garden_at_Sripur_%281%29.jpg/960px-Tea_garden_at_Sripur_%281%29.jpg" alt="শ্রীপুর চা বাগান" loading="lazy" />
+        <div class="film-cap"><h4>গাজীপুর</h4><span>শ্রীপুর</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Feature rows with real photos -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="idx">আবিষ্কার</span><h2>পরের যাত্রা সাজান</h2></div></div>
+
+    <div class="feature" style="margin-bottom:20px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Malnichora_Tea_Garden_at_Sylhet_02.jpg/960px-Malnichora_Tea_Garden_at_Sylhet_02.jpg" alt="চা বাগান" loading="lazy" />
+      <div class="feature-body">
+        <div class="k">লুকানো রত্ন</div>
+        <h3>মালনিচড়ার সবুজ জাল</h3>
+        <p>সিলেটের মালনিচড়া চা-বাগানের সারি সারি সবুজ সকালের কুয়াশায় ভেসে ওঠে। রেললাইন ঘুরিয়ে হাঁটলে মনে হবে পুরো পাহাড়টাই সাজানো।</p>
+        <div><a class="btn btn-ghost" href="places.html">রত্নগুলো দেখুন →</a></div>
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/View_of_Nilachal_hill_after_rain%2C_Bandarban_%282%29.jpg/960px-View_of_Nilachal_hill_after_rain%2C_Bandarban_%282%29.jpg" alt="নীলাচল পাহাড়" loading="lazy" />
+      <div class="feature-body">
+        <div class="k">ট্রিপ প্ল্যানার</div>
+        <h3>পাহাড় ঘুরে একটা রুট</h3>
+        <p>বান্দরবান, রাঙ্গামাটি আর খাগড়াছড়ি — তিনটে জেলা, একটা লুপ। কত দিন, কোথায় থামবে, সব একসাথে সাজিয়ে ফেলুন।</p>
+        <div><a class="btn btn-ghost" href="plan.html">ট্রিপ সাজান →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passport -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="idx">সংগ্রহ</span><h2>ভ্রমণ পাসপোর্ট</h2></div><a href="passport.html">খুলুন →</a></div>
+    <div class="pp">
+      <h3>১৯৬ জায়গার সিল</h3>
+      <p>যেখানে গিয়েছো, সেখানের সিল তুলে নাও। নাম লিখে পাসপোর্ট ডাউনলোড করুন।</p>
+      <div class="stamps">
+        <div class="stamp">সিলেট</div>
+        <div class="stamp">বান্দর</div>
+        <div class="stamp">কক্স</div>
+        <div class="stamp">৬৪</div>
+      </div>
+      <a class="btn btn-primary" href="passport.html">পাসপোর্ট খুলুন →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-tag">ঘুরে বেড়ানো জেলা ম্যাপে রাঙিয়ে নিন, নতুন জায়গা খুঁজুন আর পরের ট্রিপ সাজান।</p>
+  <div class="foot-links">
+    <a href="home.html">আমার ম্যাপ</a><a href="explore.html">কোথায় ঘুরবেন</a>
+    <a href="plan.html">ট্রিপ প্ল্যানার</a><a href="passport.html">পাসপোর্ট</a><a href="me.html">প্রোফাইল</a>
+  </div>
+  <p class="foot-coffee">ছবি: Wikimedia Commons (CC BY-SA)</p>
+  <div class="foot-sig">Md. Yaleed Haque</div>
+  <p class="foot-coffee">কোড ভালো লাগলে এক কাপ চা — bKash · Nagad · Rocket <b>01730934983</b></p>
+</footer>
+
+<nav class="tabbar" aria-label="প্রধান নেভিগেশন">
+  <div class="tabbar-in">
+    <a class="tab active" href="home.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>ম্যাপ</span></a>
+    <a class="tab" href="explore.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>ঘুরুন</span></a>
+    <a class="tab" href="passport.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>পাসপোর্ট</span></a>
+    <a class="tab" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>প্রোফাইল</span></a>
+  </div>
+</nav>
+
+</body>
+</html>
