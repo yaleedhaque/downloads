@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ট্রিপ প্ল্যানার — ঘুরে রাঙাও</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+<style>
+  .planner{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:44px}
+  @media(max-width:760px){.planner{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:24px;box-shadow:var(--sh-1)}
+  .panel h3{font-family:var(--serif);font-size:1.25rem;color:var(--forest-2);font-weight:600;margin-bottom:16px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-weight:600}
+  .field input,.field select{width:100%;font-family:var(--sans);font-size:.95rem;padding:11px 14px;border:1px solid var(--line);
+    border-radius:10px;background:var(--paper);color:var(--ink);transition:.15s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--forest);background:#fff;box-shadow:0 0 0 3px rgba(22,78,58,.1)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .pick{font-size:.82rem;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);
+    background:var(--paper);color:var(--ink-2);cursor:pointer;transition:.15s}
+  .pick:hover{border-color:var(--forest)}
+  .pick.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+  .route{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:24px;box-shadow:var(--sh-1);margin-bottom:44px}
+  .stop{display:flex;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line);position:relative}
+  .stop:last-child{border-bottom:none}
+  .stop-n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;
+    font-family:var(--serif);font-weight:700;font-size:.9rem}
+  .stop:nth-child(even) .stop-n{background:var(--amber)}
+  .stop-b h4{font-family:var(--serif);font-size:1.05rem;color:var(--forest-2);font-weight:600}
+  .stop-b p{font-size:.86rem;color:var(--ink-2);margin-top:3px}
+  .stop-b .meta{font-size:.74rem;color:var(--muted);margin-top:5px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<header class="appbar"><div class="appbar-in">
+  <a class="brand" href="home.html"><span class="glyph">ঘু</span><b>ঘুরে রাঙাও</b></a>
+  <nav class="nav">
+    <a href="home.html">আমার ম্যাপ</a><a href="world.html">বিশ্ব ম্যাপ</a>
+    <a href="explore.html">কোথায় ঘুরবেন</a><a href="plan.html" class="active">ট্রিপ প্ল্যানার</a>
+    <a href="places.html">লুকানো রত্ন</a><a href="passport.html">পাসপোর্ট</a>
+  </nav>
+  <div class="bar-right"><button class="chip-lang" type="button">English</button>
+    <a class="avatar" href="me.html" aria-label="প্রোফাইল"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="phead">
+    <div class="k">পরের যাত্রা</div>
+    <h1>ট্রিপ প্ল্যানার</h1>
+    <p>কোথায় যেতে চাও, কত দিন, কী দেখতে চাও — সব মিলিয়ে একটা রুট বানিয়ে ফেলুন।</p>
+  </div>
+
+  <div class="planner">
+    <div class="panel">
+      <h3>যাত্রার হিসাব</h3>
+      <div class="field"><label>গন্তব্য</label><input type="text" value="বান্দরবান, রাঙ্গামাটি" /></div>
+      <div class="field"><label>কত দিন</label>
+        <select><option>২ দিন</option><option selected>৩ দিন</option><option>৪ দিন</option><option>৫ দিন</option></select>
+      </div>
+      <div class="field"><label>কী দেখতে চাও</label>
+        <div class="chips">
+          <button class="pick on" type="button">পাহাড়</button>
+          <button class="pick on" type="button">জলপ্রপাত</button>
+          <button class="pick" type="button">উপজাতি গ্রাম</button>
+          <button class="pick" type="button">রান্না</button>
+          <button class="pick" type="button">ফটোগ্রাফি</button>
+        </div>
+      </div>
+      <div class="field"><label>বাজেট</label>
+        <select><option>সাশ্রয়ী</option><option selected>মাঝারি</option><option>আরামদায়ক</option></select>
+      </div>
+      <button class="btn btn-primary" type="button" style="width:100%;justify-content:center">রুট বানান →</button>
+    </div>
+
+    <div class="panel">
+      <h3>তোমার পছন্দ</h3>
+      <div class="field"><label>শুরু</label><input type="text" value="ঢাকা" /></div>
+      <div class="field"><label>যাওয়ার ধরন</label>
+        <select><option>গাড়ি</option><option>বাস</option><option selected>ট্রেন + গাড়ি</option><option>মোটরসাইকেল</option></select>
+      </div>
+      <div class="field"><label>থাকার ধরন</label>
+        <div class="chips">
+          <button class="pick on" type="button">হোটেল</button>
+          <button class="pick" type="button">রিসোর্ট</button>
+          <button class="pick on" type="button">হোমস্টে</button>
+          <button class="pick" type="button">ক্যাম্প</button>
+        </div>
+      </div>
+      <div class="field"><label>সঙ্গী</label>
+        <select><option>একা</option><option selected>বন্ধুদের নিয়ে</option><option>পরিবার</option></select>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--line)">
+        <div class="pmeta" style="margin-bottom:8px"><span>আনুমানিক খরচ</span><span>৳ ৮,৫০০</span></div>
+        <div class="pmeta" style="margin-bottom:8px"><span>দূরত্ব</span><span>৩৯৫ কিমি</span></div>
+        <div class="pmeta"><span>সময়</span><span>~ ৯ ঘণ্টা</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><div><span class="idx">প্রস্তাবিত</span><h2>৩ দিনের রুট</h2></div><a href="#">সেভ করুন</a></div>
+    <div class="route">
+      <div class="stop"><div class="stop-n">১</div><div class="stop-b">
+        <h4>ঢাকা → বান্দরবান সদর</h4><p>ভোরে রওনা, দুপুরে পৌঁছে চেক-ইন। বিকেলে নীলাচল পাহাড়ে সূর্যাস্ত।</p>
+        <div class="meta">দূরত্ব ৩১০ কিমি · ~৭ ঘণ্টা</div></div></div>
+      <div class="stop"><div class="stop-n">২</div><div class="stop-b">
+        <h4>বোগাবাদের ঝর্ণা ও উপজাতি বাজার</h4><p>সকালে বোগাবাদ, দুপুরে বামাঙ বাজার, সন্ধ্যায় সদরে ফেরা।</p>
+        <div class="meta">দূরত্ব ৪৫ কিমি · পাহাড়ি রাস্তা</div></div></div>
+      <div class="stop"><div class="stop-n">৩</div><div class="stop-b">
+        <h4>রাঙ্গামাটি হয়ে ফেরা</h4><p>কাপ্তাই লেক ঘুরে রাঙ্গামাটি হয়ে ঢাকা ফেরা। পথে চা-বাগানে থামুন।</p>
+        <div class="meta">দূরত্ব ৩৯৫ কিমি · ~৯ ঘণ্টা</div></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot-tag">ঘুরে বেড়ানো জেলা ম্যাপে রাঙিয়ে নিন, নতুন জায়গা খুঁজুন আর পরের ট্রিপ সাজান।</p>
+  <div class="foot-links"><a href="home.html">আমার ম্যাপ</a><a href="explore.html">কোথায় ঘুরবেন</a><a href="passport.html">পাসপোর্ট</a><a href="me.html">প্রোফাইল</a></div>
+  <div class="foot-sig">Md. Yaleed Haque</div>
+  <p class="foot-coffee">কোড ভালো লাগলে এক কাপ চা — bKash · Nagad · Rocket <b>01730934983</b></p>
+</footer>
+
+<nav class="tabbar"><div class="tabbar-in">
+  <a class="tab" href="home.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>ম্যাপ</span></a>
+  <a class="tab" href="explore.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>ঘুরুন</span></a>
+  <a class="tab" href="passport.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>পাসপোর্ট</span></a>
+  <a class="tab" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>প্রোফাইল</span></a>
+</div></nav>
+
+<script>
+  document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{
+    if(e.target.classList.contains('pick')) e.target.classList.toggle('on');
+  }));
+</script>
+</body>
+</html>
